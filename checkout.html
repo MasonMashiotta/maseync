@@ -175,44 +175,36 @@
     </div>
   </div>
 
-</script>
-    document.getElementById('quoteForm').addEventListener('input', () => {
-      const podcast = document.querySelector('input[value="podcast"]').checked;
-      const video = document.querySelector('input[value="video"]').checked;
-      const simple = document.querySelector('input[value="simple"]').checked;
-      const complex = document.querySelector('input[value="complex"]').checked;
-      const duration = parseInt(document.getElementById('duration').value) || 0;
+<script>
+document.getElementById('quoteForm').addEventListener('input', () => {
+    const podcast = document.querySelector('input[value="podcast"]').checked;
+    const video = document.querySelector('input[value="video"]').checked;
+    const simple = document.querySelector('input[value="simple"]').checked;
+    const complex = document.querySelector('input[value="complex"]').checked;
+    const duration = parseInt(document.getElementById('duration').value) || 0;
 
-      let price = 0;
-      if (podcast && video) {
+    let price = 0;
+    if (podcast && video) {
         alert('Please select only one of Podcast or Video editing. Make a separate request for both.');
         return;
-      }
-      if (simple && complex) {
+    }
+    if (simple && complex) {
         alert('Please select only one type of thumbnail. Make a separate request for both.');
         return;
-      }
+    }
 
-      if (podcast) {
-        price += Math.max(duration * 1.5, 20);
-      } else if (video) {
-        price += Math.max(duration * 3, 25);
-      }
+    if (podcast) price += Math.max(duration * 1.5, 20);
+    else if (video) price += Math.max(duration * 3, 25);
 
-      if (simple) price += 15;
-      if (complex) price += 35;
+    if (simple) price += 15;
+    if (complex) price += 35;
 
-      
-      if (document.querySelector('input[value="graphic"]').checked) {
-        price += 15;
-      }
-      if (document.querySelector('input[value="website"]').checked) {
-        price += 75;
-      }
-      document.getElementById('priceEstimate').innerHTML = `<strong>$${price.toFixed(2)}</strong>`;
-    });
-  </script>
+    if (document.querySelector('input[value="graphic"]').checked) price += 15;
+    if (document.querySelector('input[value="website"]').checked) price += 75;
 
+    document.getElementById('priceEstimate').innerHTML = `<strong>$${price.toFixed(2)}</strong>`;
+});
+</script>
 
 
 
