@@ -176,7 +176,7 @@
   </div>
 
   </script>
-    document.getElementById('quoteForm').addEventListener('input', () => {
+  document.getElementById('quoteForm').addEventListener('input', () => {
       const podcast = document.querySelector('input[value="podcast"]').checked;
       const video = document.querySelector('input[value="video"]').checked;
       const simple = document.querySelector('input[value="simple"]').checked;
@@ -210,7 +210,7 @@
         price += 75;
       }
       document.getElementById('priceEstimate').innerHTML = `<strong>$${price.toFixed(2)}</strong>`;
-    });
+  });
   </script>
 
 <script>
