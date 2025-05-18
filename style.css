@@ -29,10 +29,15 @@ header::after {
 }
 
 .logo-img {
-  height: 60px;
-  margin-bottom: 0.5rem;
-  z-index: 2;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
   position: relative;
+  z-index: 2;
 }
 
 .tagline {
